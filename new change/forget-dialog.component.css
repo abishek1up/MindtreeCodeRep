@@ -1,0 +1,28 @@
+
+.mat-dialog-content
+{
+    background-color:transparent;
+  padding:10%;
+}
+.mat-card-title {
+    color:#0E46F2
+  }
+.mat-success {
+  background-color: blue;
+  color: #fff;
+}
+
+.title
+{
+  background-color:#E1E1E1;
+  color:#0E46F2;
+  max-height: 20%;
+  padding: 3%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+
+

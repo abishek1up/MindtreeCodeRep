@@ -1,0 +1,28 @@
+
+<mat-dialog-content>
+                <mat-card-title style="text-align: center">  
+                        <mat-card class="title">
+                                <mat-card-title>
+                            <h4>Forgot Password</h4>
+                        </mat-card-title>  
+                            </mat-card>
+                  </mat-card-title>  
+                <br>
+                <br>
+    <mat-card-content> 
+        <form class="example-form" [formGroup]="forgotPasswordForm" (ngSubmit)="verifyMail(forgotPasswordForm)">
+            <mat-form-field class="example-full-width">
+                <input id="email" matInput placeholder="Email" formControlName="email"> <mat-icon matSuffix>person</mat-icon> 
+                <mat-hint>Please type your registered Email ID</mat-hint> 
+                <mat-error>  
+               <span *ngIf="!forgotPasswordForm.get('email').valid && forgotPasswordForm.get('email').touched">Enter a proper Email!</span>  
+               </mat-error>
+            </mat-form-field>
+            
+               <button id="forgot" style="margin-top: 10%;left:17vh" mat-raised-button [color]="'success'" [disabled]="!forgotPasswordForm.valid">Reset</button>
+               &nbsp;
+               &nbsp;
+              </form>
+    </mat-card-content>
+
+</mat-dialog-content>
