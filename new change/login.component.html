@@ -1,0 +1,166 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<div class="container-fluid" style="background-color:dimgray">
+      <nav class="navbar navbar-default ">
+          <div class="container-fluid">
+              <div class="navbar-header">
+                  <a class="navbar-brand" style="color:white">
+                      <h3>Find My Room</h3>
+                  </a>
+              </div>
+              <ul class="nav navbar-nav">
+                    <li class=""><a href="#">Home</a></li>
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Menu <span class="caret"></span></a>
+                    </li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                    <li><a routerLink="/home/signup"><span class="glyphicon glyphicon-user" style="color:white"></span> Signup</a></li>
+              </ul>
+          </div>
+      </nav>
+  </div>
+  
+
+
+
+
+
+  
+  
+  
+  
+  <div class="container-fluid" style="background-image: url('../../assets/images/registration.jpg'); ">
+      
+  
+  
+  
+      <br><br>
+  
+  <div class="row">
+      <div class="col-lg-4 col-md-4 col-sm-2"></div>
+      <div class="col-lg-4 col-md-4 col-sm-4">
+         
+  
+          <div id="wrapper">
+  
+              <div id="login_div">
+                <mat-card class="login-card">
+                    <mat-card-title>  
+                        <mat-card class="login-title">
+                            <mat-card-title>
+                        <h3>Login</h3>
+                    </mat-card-title>  
+                        </mat-card>
+                      </mat-card-title>  
+                    
+                    <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+                    <mat-card-content>
+                        <form class="example-form"  [formGroup]="loginForm" (ngSubmit)="OnSubmit(loginForm)">
+                               <mat-form-field class="example-full-width">
+                               <input id="email" matInput placeholder="Email" formControlName="email">
+                               <mat-icon matSuffix>person</mat-icon> 
+                         <!-- <mat-hint>Errors appear instantly!</mat-hint> -->
+                         <mat-error>  
+                            <span *ngIf="!loginForm.get('email').valid && loginForm.get('email').touched">Enter a proper Email!</span>  
+                        </mat-error> 
+                        <!-- <mat-error>  
+                            <span *ngIf="loginForm.get('email').touched">Enter the Email!</span>  
+                        </mat-error> -->
+                            </mat-form-field>
+                            
+                            <mat-form-field class="example-full-width">
+                                  
+                                <input type="password" id="password" matInput placeholder="Password" formControlName="password">
+                                <mat-icon matSuffix>lock</mat-icon> 
+                                <mat-error> 
+                                    <span *ngIf="!loginForm.get('password').valid && loginForm.get('password').touched">Please enter the correct password !</span>  
+                                </mat-error> 
+                               </mat-form-field>
+                               <br>
+                               <br>
+                               <button id="Login" mat-raised-button [color]="'success'" [disabled]="!loginForm.valid">Login</button>
+                               &nbsp;
+                               &nbsp;
+                               <button id="Reset" mat-raised-button [disabled]="!loginForm.touched" (click)=resetform(loginForm)>Reset</button>
+                              </form>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <button mat-button (click)="openDialog()" id="forgot"><u>Forgot Password ?</u></button>
+                    </mat-card-actions>
+                    <mat-card-actions>
+                        <button mat-stroked-button color="primary" routerLink='/home/signup' id="register"><b style="color:#004BE9">SIGN UP!<mat-icon style="margin-top:3%">person_add</mat-icon></b></button>
+                    </mat-card-actions>
+                    <mat-card-actions>
+                  </mat-card-actions>
+                  </mat-card>
+                 
+
+          </div>
+  
+      </div>
+  
+  
+  
+  
+  </div>
+  <!-- <div class="col-lg-4 col-md-4 col-sm-4">
+        <mat-card class="social-card">
+                <mat-card-title>  
+                      <mat-card class="login-title">
+                              <mat-card-title>
+                          <h3>Social Login</h3>
+                      </mat-card-title>  
+                          </mat-card>
+                  </mat-card-title> 
+               <mat-card-content>
+                  <div class="button-row">
+                      <br><br>
+                      <button mat-raised-button color style="background:#5A89EA"><b style="color:white;font-size:150%">facebook</b></button>
+                      <br><br>
+                      or
+                      <br><br>
+                      <button mat-raised-button color style="background:red"><b style="color:white;font-size:150%">Google</b><b style="color:white;font-size:100%">+</b></button>
+                      <!-- <button mat-fab disabled>Disabled</button> -->
+                    <!-- </div>
+                </mat-card-content>
+                <mat-card-actions>
+                     
+                </mat-card-actions>
+              </mat-card>
+  </div> --> 
+  
+  
+  
+  </div>
+  
+  
+<!--   
+  <br><br><br><br><br><br><br><br><br><br>
+  <div class="modal fade" id="myModal" role="dialog" >
+      <div class="modal-dialog modal-md">
+          <div class="modal-content">
+              <div class="modal-header">
+                <h3>Reset Password</h3>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+              <div class="modal-body">
+                <p>Enter Email to send OTP:</p>            
+                <form #forgotPassword="ngForm">
+                  <!-- <i style="font-size:30px" class="fa">&#xf199;</i> &nbsp; -->
+                  <!-- <input type="text" #email="ngModel" name="email" placeholder="Email" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" 
+                    [class.is-invalid]="email.invalid && email.touched" class="form-control " [(ngModel)]="emailID"><br>
+                  <div *ngIf="email.errors && (email.invalid ||email.touched)">
+                    <small class="text-danger" *ngIf="email.errors.required &&email.touched">Email field is required</small>
+                    <small class="text-danger" *ngIf="email.errors.pattern">Email must contain @ character</small>               
+                  </div>
+                </form>           
+                
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal" (click)="verifyMail()">Reset</button>
+              </div>
+          </div>
+              
+        </div>
+      </div> -->
+   <!-- -->
+  <!-- </div> --> 

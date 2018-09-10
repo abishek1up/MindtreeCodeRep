@@ -1,0 +1,46 @@
+
+
+.mat-card 
+{
+  background-image: url("https://wallpaper-gallery.net/images/hd-white-wallpaper/hd-white-wallpaper-6.jpg");
+  /* background-color:#FFFFFF; */
+  padding: 13%;
+  margin-bottom: 10%;
+  text-align: -webkit-center;
+}
+
+.login-title
+{
+  background-image: url("https://images2.alphacoders.com/602/thumb-1920-602237.jpg");
+  /* background-color:#0E46F2; */
+  max-height: 20%;
+  padding: 3%;
+  -webkit-box-shadow: 0px 9px 15px 1px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 9px 15px 1px rgba(0,0,0,0.75);
+  box-shadow: 0px 9px 15px 1px rgba(0,0,0,0.75);
+}
+
+.mat-success {
+  background-color: #1EDF1E;
+  color: #fff;
+}
+
+.mat-card-title {
+  color:#FFFFFF
+}
+.h2
+{
+margin-right:-100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+.mat-stroked-button
+{
+  margin-left:0%;
+}
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+
+
