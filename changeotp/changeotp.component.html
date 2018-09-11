@@ -1,0 +1,101 @@
+<div class="container-fluid" style="background-color:dimgray">
+
+  <nav class="navbar navbar-default ">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" style="color:white">
+          <h3>Find My Room</h3>
+        </a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class=""><a href="#">Home</a></li>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Menu <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+
+            <!-- <li><a href="#">About Us</a></li> -->
+            <!-- <li><a href="#">Contact Us</a></li> -->
+            <!-- <li><a href="#">Mail Us</a></li> -->
+          </ul>
+        </li>
+        <!-- <li><a href="#">Find Properties</a></li> -->
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+
+        <!-- <li><a routerLink="signup"><span class="glyphicon glyphicon-user" style="color:white"></span> Signup</a></li> -->
+
+      </ul>
+    </div>
+  </nav>
+</div>
+
+
+
+
+<div class="container">
+
+<div class="container" id="container">
+    <form #form="ngForm">
+        <div id="header">
+          <div>
+            <h1>Change password</h1><br><br>
+          </div>
+
+          <div class="row" id="form">
+              <div class="col-lg-1"></div>
+              <div class="col-lg-10 form-group form-inline">
+                      <input #otp="ngModel" type="text" required pattern="^[0-9]{4}$" [class.is-invalid]="otp.invalid && otp.touched" class="form-control"
+                        name="otp" placeholder="Enter OTP" [(ngModel)]="otpGen" [disabled]="otpField">&nbsp;&nbsp;
+                        <button class="btn btn-success btn-md" value="VerifyOTP" (click)="verifyOTP()" [disabled]="otpField || !otp.valid">Verify OTP</button>
+                  <div class="col-lg-3"></div>         
+                      <small class="text-danger" [class.d-none]="otp.valid || otp.untouched || otpField">OTP must contain 4 numerics!!</small>        &nbsp;&nbsp;           
+                      <small class="text-success" [class.d-none]="smallValue1">OTP successfully verified!!!</small>
+                      <small class="text-danger" [class.d-none]="smallValue2">OTP does not match!!</small>
+              </div>
+              </div>
+              <div class="row" >
+                <div class="col-lg-1"></div>
+                  <div class="col-lg-10 form-group" id="form">
+                    <input #newPassword="ngModel" type="password" required pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=*]).{9,16}$"
+              [class.is-invalid]="newPassword.invalid && newPassword.touched" class="form-control" name="newpassword" placeholder="New Password"
+              [(ngModel)]="newPasword" [disabled]="fieldDisable" />
+                  </div>
+              <div class="col-lg-3"></div>                       
+            <div *ngIf="newPassword.errors && (newPassword.invalid || newPassword.touched)">
+              <small class="text-danger" *ngIf="newPassword.errors.required && newPassword.touched">New Password field is required</small>
+              <small class="text-danger" *ngIf="newPassword.invalid && newPassword.touched">Password should contain atleast an uppercase, a lowercase, a digit and a special character like !@#$%^.&*</small>
+            </div>
+          </div>
+
+          <div class="row">
+              <div class="col-lg-1"></div>
+                <div class="col-lg-10 form-group" id="form">
+            <input #confirmPassword="ngModel" class="form-control" type="password" required [class.is-invalid]="confirmPassword.invalid && confirmPassword.touched"
+              class="form-control" name="confirmpassword" placeholder="Confirm Password" [(ngModel)]="confirmNew" [disabled]="fieldDisable"
+              (change)="checkPasswords()" />
+                </div>
+                <div class="col-lg-3"></div>
+                
+            <small class="text-danger" [class.d-none]="confirmPassword.untouched" *ngIf="newPassword.value!==confirmPassword.value ">New and confirm password fields must match!!</small>
+            <div *ngIf="confirmPassword.errors">
+              <small class="text-danger" *ngIf="confirmPassword.errors.required && confirmPassword.touched">Confirm Password field is required</small>
+              
+            </div>
+    
+          </div>
+
+       <div>
+            <button class="btn btn-success btn-sm" value="Change Password" [disabled]="buttonDisable || form.invalid" (click)="updatePassword()">Change Password</button>
+          </div>
+          <small class="text-success" [class.d-none]="updateResult">Password successfully updated!!!</small>
+    
+        </div>
+      </form>
+
+
+
+
+</div>
+
+
+
+</div>

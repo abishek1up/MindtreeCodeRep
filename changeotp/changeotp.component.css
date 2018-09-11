@@ -1,0 +1,100 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+body
+{
+  background:url("http://myminispot.com/images/prox.png");
+  background-size:cover;
+}
+
+#container
+{
+  position:absolute;
+  background:#fff;
+  height:60%;
+  width:35%;
+  top:50%;
+  left:45%;
+  margin-left:-150px;
+  margin-top:-175px;
+  box-shadow: 0px 3px 10px;
+  -webkit-box-shadow: 0px 3px 30px;
+  -moz-box-shadow: 0px 3px 3px;
+  
+  border-radius:0px;
+  -webkit-border-radius:0px;
+  -moz-border-radius:0px;
+}
+
+#header
+{
+  background-color:#FFFFFF;
+  font-family: 'Francois One', sans-serif;
+  height:12%;
+  width:100%;
+  position:absolute;
+  top:0;
+  color:#000000;
+  margin-top:-2px;
+  margin-left:-15px;
+  text-align: center;
+  
+  border-radius: 0px 0px 0px 0px;
+  -webkit-border-radius: 0px 0px 0px 0px;
+  -moz-border-radius: 0px 0px 0px 0px;
+}
+
+.form-control {
+  border-radius: 0px;
+  border: 0px solid #888888;
+  height: 44px;
+  color:#000000;
+  
+  line-height: 44px;
+  padding: 0 15px;
+  -webkit-box-shadow: inset 0px 0px 4px rgba(0,0,0,0.15);
+  box-shadow: inset 0px 0px 4px rgba(0,0,0,0.15);
+  -webkit-appearance: none;
+}
+/* .form-control:focus
+{
+    border: 1px solid #00BCD4;
+    -webkit-box-shadow: inset 0px 0px 4px rgba(0,0,0,0.15);
+    box-shadow: inset 0px 0px 4px rgba(0,0,0,0.15);
+  } */
+  
+  .text-helper {
+    margin-top: 0.2em;
+    font-size: 0.8em;
+    display: block;
+  }
+  .btn-success {
+    display: block;
+    
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.55;
+    border: none;
+    border-radius: 6px;
+    text-align: center;
+    
+  }
+  .btn {
+    display: inline-block;
+    margin: 0;
+  }
+
+  .btn {
+    margin-left: 10px;
+    border-radius: 25px;
+   
+    color:white;
+    border: 1px solid #888888;
+    padding: 5px 10px;
+    width: auto;
+  }
+  
+ /* .btn:active:hover {
+    background-color: #888888;
+    color: #FFFFFF;
+    border: 1px solid transparent;
+  } */
