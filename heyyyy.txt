@@ -1,0 +1,31 @@
+ validateUserFast(str:string)
+ { 
+ return this.http.get('https://findmyroomdotnetdevjuly2018.azurewebsites.net/api/Users/LoginCheck?id='+encodeURIComponent(str)).pipe(map((data:Response)=>{
+   return data.json() as BoolData;
+  })).toPromise().then(x=>{
+    this.boolDataObj=x;
+    if(this.boolDataObj.isValid)
+     { 
+
+       this.userID=this.boolDataObj.userID;
+       this.userEmailID=this.boolDataObj.userEmailID;
+       this.fixUsertoken();
+       console.log(this.boolDataObj);
+       this.userServ.userID=this.boolDataObj.userID;
+       this.userServ.userEmailID=this.boolDataObj.userEmailID;
+       console.log(this.boolDataObj.userID);
+       let a = new String();
+       a= this.boolDataObj.userID.toString();
+       localStorage.setItem('UserEmailID',this.boolDataObj.userEmailID);
+       console.log(localStorage.getItem('UserEmailID'));
+     }
+     else{
+        const swal = require('sweetalert2')
+        swal({
+          type: 'error',
+          title: 'Incorrect Username or Password',
+          background: '#fff url("https://thumbs.dreamstime.com/b/white-brick-wall-texture-nice-vector-seamless-square-pattern-104289132.jpg")',
+          showConfirmButton: false,
+          timer: 1500
+        })
+     
